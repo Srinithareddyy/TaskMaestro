@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Maestro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Task Maestro</h1>
+        <div class="input-section">
+            <input type="text" id="task-input" placeholder="Enter a new task"><br>
+            <input type="datetime-local" id="time-input"><br>
+            <button id="add-task-btn">Add Task</button>
+        </div>
+        <ul id="task-list"></ul>
+        <button id="generate-report-btn">Generate Report</button>
+        <audio id="reminder-sound" src="Audio.mp3" preload="auto"></audio>
+    </div>
+    <div id="reminder-modal" class="modal">
+        <div id="modal-content" class="modal-content"></div>
+        <div class="modal-buttons">
+            <button id="stop-btn">Stop</button>
+            <button id="postpone-btn">Postpone</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

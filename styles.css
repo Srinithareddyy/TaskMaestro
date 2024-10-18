@@ -1,0 +1,109 @@
+/* Basic Reset */
+body, h1, h2, table, th, td {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0f7fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: #ffffff;
+    padding: 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 80%;
+    max-width: 800px;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Display children in a column layout */
+    align-items: center; /* Center align children horizontally */
+}
+
+h1 {
+    margin-bottom: 30px;
+    color: #00796b;
+    font-size: 40px;
+    font-family: 'Times New Roman', serif;
+}
+
+.report-section {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%; /* Ensure the report sections take full width of the container */
+    max-width: 600px; /* Optional: Set a max-width for better layout control */
+}
+
+.task-details {
+    margin-top: 20px;
+}
+
+#task-details-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#task-details-table th,
+#task-details-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#task-details-table th {
+    background-color: #f4f4f4;
+    color: #00796b;
+}
+
+#task-counters {
+    margin-top: 20px; /* Space above counters */
+    padding: 10px;
+    background-color: #e0f2f1; /* Light background color */
+    border: 1px solid #b2dfdb;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#Completed-count,
+#In-complete-count,
+#total-tasks-count {
+    display: block;
+    margin-bottom: 10px;
+    color: #00796b;
+    font-size: 18px;
+}
+
+#total-tasks-count {
+    margin-bottom: 0;
+}
+
+#back-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+#back-btn:hover {
+    background-color: #0056b3;
+}
