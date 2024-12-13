@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Maestro</title>
+    <link rel="stylesheet" href="css2.css">
+</head>
+<body>
+    <div class="container">
+        <div id="loginSection">
+            <h1> Task Maestro Login</h1>
+            <form id="loginForm">
+                <input type="email" id="loginEmail" placeholder="Email" required autocomplete="username">
+                <input type="password" id="loginPassword" placeholder="Password" required autocomplete="current-password">
+                <button type="submit">Login</button>
+            </form>
+            <p class="showSignup">Don't have an account? <a href="#" id="showSignup">Sign up</a></p>
+        </div>
+        <div id="signupSection" class="hidden">
+            <h1>Task Maestro Sign Up</h1>
+            <form id="signupForm">
+                <input type="text" id="signupName" placeholder="Full Name" required>
+                <input type="email" id="signupEmail" placeholder="Email" required autocomplete="username">
+                <input type="password" id="signupPassword" placeholder="Password" required autocomplete="new-password">
+                <button type="submit">Sign Up</button>
+            </form>
+            <p class="showLogin">Already have an account? <a href="#" id="showLogin">Login</a></p>
+        </div>
+        <div id="taskManagerSection" class="hidden">
+            <div id="userInfo">
+                <span id="userName"></span>
+                <div class="logoutbtn">             
+                    <button  class="logoutt " id="logoutButton"> Logout </button></div>
+            </div>
+            <h1 style="font-size: 42px;">Task Maestro</h1>
+            <div id="addTaskForm">
+                <h2>Add New Task</h2>
+                <input type="text" id="taskName" placeholder="Task Name" required>
+                <input type="datetime-local" id="taskDateTime" required>
+            <div id="alarmSoundSection">
+                <label for="sound">Choose alarm sound</label>
+                <select id="alarmSoundSelect">
+                    <option value="iosalarm.mp3">Must Select sound</option>
+                    <option value="iosalarm.mp3">Alarm Sound 1</option>
+                    <option value="alarmsound1.wav">Alarm Sound 2</option>
+                    <option value="alarmsound2.mp3">Alarm Sound 3</option>
+                    <option value="pasichilaka.mp3">Alarm Sound 4</option>
+                </select>
+                <br>               
+                <audio id="alarmAudio" preload="auto" ></audio>
+            </div>
+            <div class="modal-field">
+                <label for="repeats">Repeat:</label>
+                <select id="repeats">
+                    <option value="none">None</option>
+                    <option value="daily">Daily</option>
+                    <option value="weekly">Weekly</option>
+                </select>
+            </div>
+            <button id="addTaskButton">+ Add Task</button>
+            </div>
+            <div id="taskList">
+                <h2>Task List :</h2>
+                <ul id="tasks"></ul>
+            </div>
+            <button id="generateReportButton" onclick="document.getElementById('reportSection').style.backgroundColor='white'">Generate Report</button>
+        </div>
+    </div>
+    <div id="reportSection" class="hidden">
+        <div class="container">
+            <div id="pieChartContainer">
+                <canvas id="pieChart"></canvas>
+                <div id="bothbuttons">
+                    <button id="closeReportButton">Close Report</button>                    
+                    <button id="printbtn" onclick="window.print()">Print this page</button>
+                </div>
+            </div>
+            <br>
+            <table  id="taskTable">
+                <caption>Task Report</caption>
+                <thead>
+                    <tr>
+                        <th>Task Name</th>
+                        <th>Due Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="taskTableBody"></tbody>
+            </table>
+        </div>
+    </div>
+    <div id="alarmModal" class="modal">
+        <div class="modal-content">
+            <h2>Task Alarm</h2>
+            <p id="alarmTaskName"></p>
+            <button id="stopAlarmButton">Mark as done</button>
+            <button id="postponeAlarmButton">Snooze</button>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js2.js"></script>
+</body>
+</html>
